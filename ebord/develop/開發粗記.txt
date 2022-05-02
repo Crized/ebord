@@ -1,0 +1,59 @@
+外部資源
+bootstrap
+pingendo
+
+https://fontawesome.com/v4/icons/
+https://fontawesome.com/v4/get-started/
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css
+https://code.jquery.com/jquery-3.3.1.slim.min.js
+https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js
+https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+https://ithelp.ithome.com.tw/articles/10252941
+
+開發環境
+php
+apache
+mysql
+
+	Apache/2.4.39 (Win64) PHP/7.3.8
+
+參考資料
+https://www.youtube.com/watch?v=gHCB0sd47Is
+https://github.com/twtrubiks/django-rest-framework-tutorial/tree/master/RESTful-API-Tutorial
+https://www.nantou.gov.tw/upload/38528_6.pdf  -- 機關電子公佈欄管理系統操作說明 - 南投縣政府
+https://ithelp.ithome.com.tw/articles/10190254
+https://www.webslesson.info/2018/05/how-to-make-simple-crud-rest-api-in-php-with-mysql.html
+https://www.youtube.com/watch?v=hZPA8HgINmM
+https://www.w3schools.com/php/php_file_create.asp
+https://ithelp.ithome.com.tw/articles/10190254
+https://www.php.net/manual/en/function.sprintf.php
+https://stackoverflow.com/questions/23201212/php-mysql-results-to-json
+https://audilu.com/2011/01/09/php-mysql-utf8-unicode/
+https://ithelp.ithome.com.tw/articles/10197904
+https://www.sitepoint.com/get-url-parameters-with-javascript/
+https://www.codegrepper.com/code-examples/javascript/how+to+run+js+before+submit+html
+
+需求畫面
+1. 公佈欄 done
+2. 新增/修改 done
+3. 刪除  done
+4. 取得所有 done
+5. 登入
+
+資料庫
+名稱     編碼
+ebord    utf8_general_ci
+
+1. 佈告資料
+  資料表名稱：table_Bulletin
+  (ID, subject, content, upload_Date, upload_Time)
+
+  sql-syntax
+    CREATE TABLE table_bulletin ( ID VARCHAR(20) NOT NULL , subject TINYTEXT NOT NULL , content TEXT NOT NULL , upload_Date DATE NOT NULL , upload_Time TIME NOT NULL , PRIMARY KEY (ID)) ENGINE = InnoDB;
+		INSERT INTO ebord.table_bulletin (ID, subject, content, upload_Date, upload_Time) VALUES ('17c8f1198c99a2727826', '測試主題2', '測試內容2', '2022-05-02', '08:31:00')
+		SELECT IF(COUNT(*) > 0, 1, 0) AS check_Result FROM table_bulletin WHERE ID = 'd7447bd2990f494c4045'
+		DELETE FROM table_bulletin WHERE ID = '17c8f1198c99a2727825'
+		UPDATE table_bulletin SET subject = 'asdaaadd', content = 'dsaaaa', upload_Date = '2022-05-04', upload_Time = '02:02:18' WHERE ID = '3f9f7d6daf1e273272ef'
+2. 登入
+  (user_ID, user_Pass, user_Token)

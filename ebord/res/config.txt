@@ -1,0 +1,1 @@
+{"database":{"database_Status":"ok","database_Name":"ebord","database_User":"root","database_Password":"","database_Server":"localhost"}}

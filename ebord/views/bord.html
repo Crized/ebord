@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://localhost/ebord/res/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="http://localhost/ebord/res/css/bootstrap-4.3.1.css">
+  <script>
+  window.onload=function(){
+    fetch('http://localhost/ebord/api/ebord_api.php?bulletin_Ation=get_all_subject')
+        .then((response) => {
+            return response.json();
+        })
+        .then( (response) => {
+          for (var i = 0; i < response.length; i++) {
+            document.getElementById('bord_Item').insertAdjacentHTML('beforeend', '<span class="list-group-item list-group-item-action">'+response[i]['subject']+'</span>');
+          }
+            console.log(response[0]['ID']);
+        })
+        .catch((error) => {
+            console.log(`Error: ${error}`);
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-2 text-center border-bottom border-primary shadow">簡易公佈欄</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12"><a class="btn btn-primary w-100 mt-2" href="http://localhost/ebord/views/bord_action.html">公佈欄操作</a></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="list-group" id="bord_Item">
+            <span class="list-group-item list-group-item-action active"> 最新公告</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center d-md-flex justify-content-between align-items-center" style="">
+        <ul class="nav d-flex justify-content-center">
+          <!-- <li class="nav-item"> <a class="nav-link active" href="http://localhost/ebord">公佈欄</a> </li> -->
+          <!-- <li class="nav-item"> <a class="nav-link" href="http://localhost/ebord/views/bord_action.html">公佈欄操作</a> </li> -->
+          <!-- <li class="nav-item"> <a class="nav-link" href="#">About</a> </li> -->
+        </ul>
+        <p class="mb-0 py-1">© 2022-05-01 Created</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="http://localhost/ebord/res/js/jquery-3.3.1.slim.min.js" ></script>
+<script src="http://localhost/ebord/res/js/popper.min.js" ></script>
+<script src="http://localhost/ebord/res/js/bootstrap.min.js" ></script>
+</body>
+
+</html>
